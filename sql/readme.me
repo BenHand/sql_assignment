@@ -49,9 +49,9 @@ Normal Mode
 
       2,125 items
 
-8) sqlite> SELECT sum(price) FROM items WHERE category LIKE '%book%';
+8) sqlite> SELECT sum(price*quantity) FROM orders JOIN items ON orders.item_id = items.id WHERE category LIKE '%book%';
 
-      $59,241
+      $1,081,352 ?!
 
 9) sqlite> SELECT * FROM users LIMIT(1);
           id|first_name|last_name|email
