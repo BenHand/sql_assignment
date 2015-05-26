@@ -70,4 +70,22 @@ Normal Mode
 
   -------------------------------------
 
-1)
+1) sqlite> SELECT item_id, sum(quantity) AS totalnumordered FROM orders GROUP BY item_id ORDER BY totalnumordered DESC LIMIT(1);   65|72
+
+most ordered:
+  65|Incredible Granite Car|Music, Sports & Clothing|Virtual bi-directional alliance|7295
+
+  sqlite> SELECT * FROM orders JOIN items ON orders.item_id = items.id GROUP BY item_id ORDER BY quantity DESC LIMIT 10;
+grossed most: Fantastic Wooden Chair
+
+2) same command to find most spent. and thats who
+id          first_name  last_name   email
+----------  ----------  ----------  ------------------
+51          Ben         Hand        gneeshot@gmail.com
+
+
+3) sqlite> SELECT * FROM orders JOIN items ON orders.item_id = items.id GROUP BY category ORDER BY quantity DESC LIMIT 4;
+
+  Computers, 'Beauty, toys & sports', Games
+
+
